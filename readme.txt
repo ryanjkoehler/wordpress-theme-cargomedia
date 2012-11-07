@@ -1,5 +1,5 @@
 = Cargo Media =
 
-* by the WordPress team, http://wordpress.org/
+* by the Cargo Media AG
 
 == ABOUT Cargo Media ==
