@@ -98,11 +98,10 @@ function cargomedia_setup() {
 	
 	add_theme_support( 'custom-header', $custom_header_support );
 
+	// This theme uses wp_nav_menu() in one location.
+	register_nav_menu( 'primary', __( 'Primary Menu', 'cargomedia' ) );
 
-	// We'll be using post thumbnails for custom header images on posts and pages.
-	// We want them to be the size of the header image that we just defined
-	// Larger images will be auto-cropped to fit, smaller ones will be ignored. See header.php.
-	set_post_thumbnail_size( $custom_header_support['width'], $custom_header_support['height'], true );
+	set_post_thumbnail_size( 150, 150, true );
 
 	// Add Cargo Media's custom image sizes.
 	// Used for large feature (header) images.
@@ -130,7 +129,7 @@ endif; // cargomedia_setup
  * Sets the post excerpt length to 100 words.
  */
 function cargomedia_excerpt_length( $length ) {
-	return 100;
+	return 60;
 }
 add_filter( 'excerpt_length', 'cargomedia_excerpt_length' );
 

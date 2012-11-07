@@ -60,7 +60,7 @@
 			</nav>
 		</div>
 	</header>
-	<?php if ( is_home() ) { ?>
+	<?php if ( is_front_page() ) { ?>
 	<div class="sheet headerImage">
 		<?php
 		// Check to see if the header image has been removed
