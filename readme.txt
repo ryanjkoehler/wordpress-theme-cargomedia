@@ -1,5 +1,5 @@
-= TWENTY ELEVEN =
+= Cargo Media =
 
 * by the WordPress team, http://wordpress.org/
 
-== ABOUT TWENTY ELEVEN ==
+== ABOUT Cargo Media ==

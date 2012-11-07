@@ -3,8 +3,8 @@
  * The template for displaying Category Archive pages.
  *
  * @package WordPress
- * @subpackage Twenty_Eleven
- * @since Twenty Eleven 1.0
+ * @subpackage Cargo_Media
+ * @since Cargo Media 1.0
  */
 
 get_header(); ?>
@@ -12,7 +12,7 @@ get_header(); ?>
 
 				<div class="blogHeader sheet">
 					<h2><?php
-						printf( __( 'Category: %s', 'twentyeleven' ), '<strong>' . single_cat_title( '', false ) . '</strong>' );
+						printf( __( 'Category: %s', 'cargomedia' ), '<strong>' . single_cat_title( '', false ) . '</strong>' );
 					?></h2>
 
 					<?php
@@ -43,9 +43,9 @@ get_header(); ?>
 
 				<article class="noResults">
 					<div class="sheet">
-						<h2><?php _e( 'Nothing Found', 'twentyeleven' ); ?></h2>
+						<h2><?php _e( 'Nothing Found', 'cargomedia' ); ?></h2>
 					</div>
-					<p><?php _e( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.', 'twentyeleven' ); ?></p>
+					<p><?php _e( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.', 'cargomedia' ); ?></p>
 					<?php get_search_form(); ?>
 				</article>
 

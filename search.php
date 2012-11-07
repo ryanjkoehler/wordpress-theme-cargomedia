@@ -3,8 +3,8 @@
  * The template for displaying Search Results pages.
  *
  * @package WordPress
- * @subpackage Twenty_Eleven
- * @since Twenty Eleven 1.0
+ * @subpackage Cargo_Media
+ * @since Cargo Media 1.0
  */
 
 get_header(); ?>
@@ -13,7 +13,7 @@ get_header(); ?>
 	<?php if ( have_posts() ) : ?>
 
 	<div class="blogHeader sheet">
-		<h2><?php printf( __( 'Search Results for: %s', 'twentyeleven' ), '<strong>' . get_search_query() . '</strong>' ); ?></h2>
+		<h2><?php printf( __( 'Search Results for: %s', 'cargomedia' ), '<strong>' . get_search_query() . '</strong>' ); ?></h2>
 	</div>
 
 
@@ -38,8 +38,8 @@ get_header(); ?>
 
 		<article class="noResults">
 			<div class="sheet">
-				<h2><?php _e( 'Nothing Found', 'twentyeleven' ); ?></h2>
-				<p><?php _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'twentyeleven' ); ?></p>
+				<h2><?php _e( 'Nothing Found', 'cargomedia' ); ?></h2>
+				<p><?php _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'cargomedia' ); ?></p>
 				<?php get_search_form(); ?>
 			</div>
 		</article>

@@ -4,8 +4,8 @@
  * Description: A Page Template that adds a sidebar to pages
  *
  * @package WordPress
- * @subpackage Twenty_Eleven
- * @since Twenty Eleven 1.0
+ * @subpackage Cargo_Media
+ * @since Cargo Media 1.0
  */
 
 get_header(); ?>

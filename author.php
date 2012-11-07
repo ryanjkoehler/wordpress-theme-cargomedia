@@ -3,8 +3,8 @@
  * The template for displaying Author Archive pages.
  *
  * @package WordPress
- * @subpackage Twenty_Eleven
- * @since Twenty Eleven 1.0
+ * @subpackage Cargo_Media
+ * @since Cargo Media 1.0
  */
 
 get_header(); ?>
@@ -22,7 +22,7 @@ get_header(); ?>
 				?>
 
 				<div class="blogHeader sheet">
-					<h2><?php printf( __( 'Author %s', 'twentyeleven' ), '<strong>' . get_the_author() . '</strong>' ); ?></h2>
+					<h2><?php printf( __( 'Author %s', 'cargomedia' ), '<strong>' . get_the_author() . '</strong>' ); ?></h2>
 				</div>
 
 				<?php
@@ -37,7 +37,7 @@ get_header(); ?>
 				// If a user has filled out their description, show a bio on their entries.
 				if ( get_the_author_meta( 'description' ) ) : ?>
 				<div class="author-info sheet">
-					<?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'twentyeleven_author_bio_avatar_size', 100 ) ); ?>
+					<?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'cargomedia_author_bio_avatar_size', 100 ) ); ?>
 					<p>
 					<?php the_author_meta( 'description' ); ?>
 					</p>
@@ -65,9 +65,9 @@ get_header(); ?>
 
 				<article class="noResults">
 					<div class="sheet">
-						<h2><?php _e( 'Nothing Found', 'twentyeleven' ); ?></h2>
+						<h2><?php _e( 'Nothing Found', 'cargomedia' ); ?></h2>
 					</div>
-					<p><?php _e( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.', 'twentyeleven' ); ?></p>
+					<p><?php _e( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.', 'cargomedia' ); ?></p>
 					<?php get_search_form(); ?>
 				</article>
 

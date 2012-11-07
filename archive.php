@@ -8,8 +8,8 @@
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
  * @package WordPress
- * @subpackage Twenty_Eleven
- * @since Twenty Eleven 1.0
+ * @subpackage Cargo_Media
+ * @since Cargo Media 1.0
  */
 
 get_header(); ?>
@@ -19,13 +19,13 @@ get_header(); ?>
 				<div class="blogHeader sheet">
 					<h2>
 						<?php if ( is_day() ) : ?>
-							<?php printf( __( 'Daily Archives: %s', 'twentyeleven' ), '<span>' . get_the_date() . '</span>' ); ?>
+							<?php printf( __( 'Daily Archives: %s', 'cargomedia' ), '<span>' . get_the_date() . '</span>' ); ?>
 						<?php elseif ( is_month() ) : ?>
-							<?php printf( __( 'Monthly Archives: %s', 'twentyeleven' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'twentyeleven' ) ) . '</span>' ); ?>
+							<?php printf( __( 'Monthly Archives: %s', 'cargomedia' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'cargomedia' ) ) . '</span>' ); ?>
 						<?php elseif ( is_year() ) : ?>
-							<?php printf( __( 'Yearly Archives: %s', 'twentyeleven' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'twentyeleven' ) ) . '</span>' ); ?>
+							<?php printf( __( 'Yearly Archives: %s', 'cargomedia' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'cargomedia' ) ) . '</span>' ); ?>
 						<?php else : ?>
-							<?php _e( 'Blog Archives', 'twentyeleven' ); ?>
+							<?php _e( 'Blog Archives', 'cargomedia' ); ?>
 						<?php endif; ?>
 					</h2>
 				</div>
@@ -51,14 +51,13 @@ get_header(); ?>
 
 				<article class="noResults">
 					<div class="sheet">
-						<h2><?php _e( 'Nothing Found', 'twentyeleven' ); ?></h2>
+						<h2><?php _e( 'Nothing Found', 'cargomedia' ); ?></h2>
 					</div>
-						<p><?php _e( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.', 'twentyeleven' ); ?></p>
+						<p><?php _e( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.', 'cargomedia' ); ?></p>
 						<?php get_search_form(); ?>
 				</article>
 
 			<?php endif; ?>
 
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
