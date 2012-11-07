@@ -27,9 +27,6 @@
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo( 'template_directory' ); ?>/css/reset.css">
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'template_directory' ); ?>/css/style.css" />
-
-	<script src="js/jquery-1.7.1.min.js" type="text/javascript"></script>
-	<script src="js/cargo.js" type="text/javascript"></script>
 <?php
 	/* We add some JavaScript to pages with the comment form
 	 * to support sites with threaded comments (when in use).
@@ -40,18 +37,6 @@
 	wp_head();
 ?>
 </head>
-
-
-
-
-
-
-
-
-
-<link rel="stylesheet" type="text/css" href="css/styles.css">
-
-<title>Cargo Media AG</title>
 
 <body>
 	<header>
@@ -75,5 +60,44 @@
 			</nav>
 		</div>
 	</header>
-
+	<?php if ( is_home() ) { ?>
+	<div class="sheet headerImage">
+		<?php
+		// Check to see if the header image has been removed
+		$header_image = get_header_image();
+		if ( $header_image ) :
+			// Compatibility with versions of WordPress prior to 3.4.
+			if ( function_exists( 'get_custom_header' ) ) {
+				// We need to figure out what the minimum width should be for our featured image.
+				// This result would be the suggested width if the theme were to implement flexible widths.
+				$header_image_width = get_theme_support( 'custom-header', 'width' );
+			} else {
+				$header_image_width = HEADER_IMAGE_WIDTH;
+			}
+			?>
+			<div>
+				<?php
+				// The header image
+				// Check if this is a post or page, if it has a thumbnail, and if it's a big one
+				if ( is_singular() && has_post_thumbnail( $post->ID ) &&
+						( /* $src, $width, $height */ $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), array( $header_image_width, $header_image_width ) ) ) &&
+						$image[1] >= $header_image_width ) :
+					// Houston, we have a new header image!
+					echo get_the_post_thumbnail( $post->ID, 'post-thumbnail' );
+				else :
+					// Compatibility with versions of WordPress prior to 3.4.
+					if ( function_exists( 'get_custom_header' ) ) {
+						$header_image_width  = get_custom_header()->width;
+						$header_image_height = get_custom_header()->height;
+					} else {
+						$header_image_width  = HEADER_IMAGE_WIDTH;
+						$header_image_height = HEADER_IMAGE_HEIGHT;
+					}
+					?>
+					<img src="<?php header_image(); ?>" width="<?php echo $header_image_width; ?>" height="<?php echo $header_image_height; ?>" alt="" />
+					<?php endif; // end check for featured image or standard header ?>
+			</div>
+			<?php endif; // end check for removed header image ?>
+		</div>
+	<?php } ?>
 	<section id="main">

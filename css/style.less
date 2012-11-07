@@ -1,12 +1,11 @@
 /* Variables */
 @basic: rgb(60, 60, 60);
-@light: lighten(@basic, 40);
-@red: #D41440;
-@green: #009245;
-@orange: #F1861E;
 @blue: #3FB4FF;
-@darkblue: rgb(44, 135, 173);
+@green: #009245;
+@red: #D41440;
+@orange: #F1861E;
 
+@link: rgb(44, 135, 173);
 @bgOverlay: rgba(60, 60, 60, .1);
 
 /* Mixins */
@@ -104,7 +103,7 @@ body {
 
 a {
 	text-decoration: none;
-	color: rgb(44, 135, 173);
+	color: @link;
 
 	&:hover {
 		text-decoration: underline;
@@ -132,13 +131,14 @@ h2 {
 }
 
 h3 {
+	position: relative;
+	margin-bottom: 30px;
+	padding-bottom: 25px;
 	text-align: center;
 	font-size: 26px;
 	font-family: 'Bad Script', cursive;
-	color: @basic;
-	margin-bottom: 30px;
-	padding-bottom: 25px;
 	border-bottom: 1px solid fadeout(@basic, 70);
+	color: @basic;
 }
 
 h4 {
@@ -392,7 +392,7 @@ article {
 		margin-top: 30px;
 	}
 
-	&.career, &.benefits, &.application {
+	&.static {
 		h4 {
 			text-align: left;
 		}
@@ -405,12 +405,24 @@ article {
 		}
 		ul {
 			list-style: disc;
+			margin: 10px 0;
 
 			li {
 				margin-bottom: 10px;
 			}
+		}
 
-			&.technologies {
+		.illustration {
+			margin: 0 auto;
+			max-width: 100%;
+			background-size: 100%;
+			background-position: center;
+			background-repeat: no-repeat;
+			width: 415px;
+		}
+
+		&.career {
+			.technologies {
 				margin: 0;
 				list-style-type: none;
 
@@ -419,23 +431,55 @@ article {
 				}
 
 			}
-
-		}
-		.imgBenefits {
-			margin: 0 auto;
-			width: 280px;
-			height: 380px;
-			max-width: 100%;
-			background-image: url("../img/cm_benefits.png");
-			background-size: 100%;
-			background-position: center;
-			background-repeat: no-repeat;
 		}
 
-		.apply {
-			.button(@blue);
-			margin-top: 15px;
+		&.benefits {
+			.illustration {
+				height: 384px;
+				background-image: url("../img/cm_benefits.png");
+			}
 		}
+
+		&.application {
+			.apply {
+				.button(@blue);
+				margin-top: 15px;
+			}
+		}
+
+		&.mission {
+			.illustration {
+				background-image: url("../img/cm_mission.svg");
+				height: 310px;
+
+				&.monkey {
+					width: 75px;
+					height: 57px;
+					position: absolute;
+					right: 10px;
+					bottom: 0;
+					background-image: url("../img/cm_monkey.png");
+				}
+			}
+		}
+
+		&.statistic {
+			.illustration {
+				background-image: url("../img/cm_stats.svg");
+				height: 336px;
+			}
+		}
+
+		&.technology {
+			.illustration {
+				background-image: url("../img/cm_technology.png");
+				height: 336px;
+			}
+		}
+
+
+
+
 	}
 }
 
@@ -469,7 +513,7 @@ article {
 		display: block;
 		padding: 20px;
 
-		&.box { //			background-color: @bgOverlay;
+		&.box {
 			text-align: center;
 
 			&.blue {
@@ -516,9 +560,6 @@ article {
 
 	.entry-content {
 		margin-bottom: 40px;
-		p {
-//			font-family: 'Helvetica Neue','Open Sans', sans-serif;
-		}
 
 		h2 {
 			text-align: left;
@@ -557,6 +598,7 @@ article {
 		img {
 			margin: 10px 0;
 		}
+
 		ul, ol {
 			list-style: disc;
 			margin: 10px 0;
