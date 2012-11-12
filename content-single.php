@@ -12,28 +12,26 @@
 	<h1><?php the_title(); ?></h1>
 
 	<div class="entry-meta">
-		<?php if ('post' == get_post_type()) : ?>
-
 		<?php cargomedia_posted_on(); ?>
-		<?php endif; ?>
-		<?php if ('post' == get_post_type()) : // Hide category and tag text for pages on Search ?>
 		<?php
-		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list(__(', ', 'cargomedia'));
 		if ($categories_list): ?>
-			<?php printf(__(' | Posted in %2$s', 'cargomedia'), 'entry-utility-prep entry-utility-prep-cat-links', $categories_list); ?>
-			<?php endif; // End if categories ?>
+			<span class="category">
+						<?php printf(__(' | Posted in %2$s', 'cargomedia'), '', $categories_list); ?>
+					</span>
+			<?php endif; ?>
+
 		<?php
-		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list('', __(', ', 'cargomedia'));
 		if ($tags_list): ?>
-			<?php printf(__(' | Tagged %2$s', 'cargomedia'), '', $tags_list); ?>
-			<?php endif; // End if $tags_list ?>
-		<?php endif; // End if 'post' == get_post_type() ?>
+			<span class="tag">
+						<?php printf(__(' | Tagged %2$s', 'cargomedia'), '', $tags_list); ?>
+					</span>
+			<?php endif; ?>
 
 		<?php if (comments_open()) : ?>
-		<span> | <?php comments_popup_link() ?></span>
-		<?php endif; // End if comments_open() ?>
+		<span class="comment"> | <?php comments_popup_link() ?></span>
+		<?php endif; ?>
 
 		<?php edit_post_link(__('Edit', 'cargomedia'), ' | '); ?>
 	</div>

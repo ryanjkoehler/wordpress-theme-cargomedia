@@ -38,7 +38,7 @@
 ?>
 </head>
 
-<body>
+<body class="<?php if(is_page()) {echo 'page-'.$post->post_name; } ?>">
 	<header>
 		<div class="sheet">
 			<a href="/" class="logo">
@@ -61,7 +61,7 @@
 		</div>
 	</header>
 	<?php if ( is_front_page() ) { ?>
-	<div class="sheet headerImage">
+	<div class="headerImage">
 		<?php
 		// Check to see if the header image has been removed
 		$header_image = get_header_image();
@@ -94,7 +94,12 @@
 						$header_image_height = HEADER_IMAGE_HEIGHT;
 					}
 					?>
-					<img src="<?php header_image(); ?>" width="<?php echo $header_image_width; ?>" height="<?php echo $header_image_height; ?>" alt="" />
+					<div class="imgWrapper">
+						<div class="smoothDevide"></div>
+						<div class="smoothDevide right"></div>
+						<div class="smoothDevide top"></div>
+						<img src="<?php header_image(); ?>" width="<?php echo $header_image_width; ?>" height="<?php echo $header_image_height; ?>" alt="" />
+					</div>
 					<?php endif; // end check for featured image or standard header ?>
 			</div>
 			<?php endif; // end check for removed header image ?>

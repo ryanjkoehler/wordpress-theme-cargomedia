@@ -95,7 +95,7 @@ function cargomedia_setup() {
 		// Random image rotation by default.
 		'random-default' => true,
 	);
-	
+
 	add_theme_support( 'custom-header', $custom_header_support );
 
 	// This theme uses wp_nav_menu() in one location.
@@ -120,6 +120,16 @@ function cargomedia_setup() {
 			'url' => '%s/img/header/office2.jpg',
 			'thumbnail_url' => '%s/img/header/thumbnail/office2.jpg',
 			'description' => __( 'Office', 'cargomedia' )
+		),
+		'office3' => array(
+		'url' => '%s/img/header/office3.jpg',
+		'thumbnail_url' => '%s/img/header/thumbnail/office2.jpg',
+		'description' => __( 'Office', 'cargomedia' )
+		),
+		'office4' => array(
+		'url' => '%s/img/header/office4.jpg',
+		'thumbnail_url' => '%s/img/header/thumbnail/office2.jpg',
+		'description' => __( 'Office', 'cargomedia' )
 		)
 	) );
 }
