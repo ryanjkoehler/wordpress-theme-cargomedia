@@ -7,10 +7,10 @@
 	<g>
 		<path style="fill-rule:evenodd;clip-rule:evenodd;fill:#333333;" d="M72,87.613C72,90.036,70.036,92,67.614,92H32.386
 			C29.964,92,28,90.036,28,87.613V13.387C28,10.964,29.964,9,32.386,9h35.229C70.036,9,72,10.964,72,13.387V87.613z"/>
-		<rect x="32" y="17" style="fill-rule:evenodd;clip-rule:evenodd;fill:#999999;" width="36" height="64"/>
-		<circle style="fill-rule:evenodd;clip-rule:evenodd;fill:#999999;" cx="36.362" cy="12.637" r="1.535"/>
-		<path style="fill-rule:evenodd;clip-rule:evenodd;fill:#999999;" d="M55,87.862C55,89.043,54.043,90,52.863,90h-5.727
-			C45.957,90,45,89.043,45,87.862v-0.725C45,85.957,45.957,85,47.137,85h5.727C54.043,85,55,85.957,55,87.138V87.862z"/>
+		<rect x="32" y="17" style="fill-rule:evenodd;clip-rule:evenodd;fill:#F2F2F2;" width="36" height="64"/>
+		<circle style="fill-rule:evenodd;clip-rule:evenodd;fill:#F2F2F2;" cx="36.362" cy="12.637" r="1.535"/>
+		<path style="fill-rule:evenodd;clip-rule:evenodd;fill:#F2F2F2;" d="M55,86.862C55,88.043,54.043,89,52.863,89h-5.727
+			C45.957,89,45,88.043,45,86.862v-0.725C45,84.957,45.957,84,47.137,84h5.727C54.043,84,55,84.957,55,86.138V86.862z"/>
 	</g>
 	<g>
 		<path style="fill-rule:evenodd;clip-rule:evenodd;fill:#3C3C3B;" d="M46.839,60.554c-0.297-0.182-0.622-0.328-0.882-0.552

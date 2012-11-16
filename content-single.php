@@ -9,7 +9,7 @@
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<h1><?php the_title(); ?></h1>
+	<h1 class="single"><?php the_title(); ?></h1>
 
 	<div class="entry-meta">
 		<?php cargomedia_posted_on(); ?>

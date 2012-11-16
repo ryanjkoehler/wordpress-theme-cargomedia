@@ -39,8 +39,8 @@ code {
 	display: block;
 	margin: 10px 0;
 	padding: 5px 10px;
-	background-color: rgba(63, 180, 255, .09999999999999998);
-	border: 1px dashed rgba(63, 180, 255, .30000000000000004);
+	background-color: rgba(63, 180, 255, .01);
+	border: 1px dashed rgba(63, 180, 255, .3);
 	font-family: monospace;
 	font-size: 13px
 }

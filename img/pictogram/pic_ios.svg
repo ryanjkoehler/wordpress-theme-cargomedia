@@ -7,9 +7,9 @@
 	<g>
 		<path style="fill-rule:evenodd;clip-rule:evenodd;fill:#333333;" d="M72,87.613C72,90.036,70.036,92,67.613,92H32.387
 			C29.964,92,28,90.036,28,87.613V13.387C28,10.964,29.964,9,32.387,9h35.227C70.036,9,72,10.964,72,13.387V87.613z"/>
-		<rect x="31" y="17" style="fill-rule:evenodd;clip-rule:evenodd;fill:#999999;" width="37" height="64"/>
-		<circle style="fill-rule:evenodd;clip-rule:evenodd;fill:#999999;" cx="49.545" cy="86.439" r="2.961"/>
-		<circle style="fill-rule:evenodd;clip-rule:evenodd;fill:#999999;" cx="35.398" cy="12.637" r="1.535"/>
+		<rect x="31" y="17" style="fill-rule:evenodd;clip-rule:evenodd;fill:#F2F2F2;" width="37" height="64"/>
+		<circle style="fill-rule:evenodd;clip-rule:evenodd;fill:#F2F2F2;" cx="49.545" cy="86.439" r="2.961"/>
+		<circle style="fill-rule:evenodd;clip-rule:evenodd;fill:#F2F2F2;" cx="35.398" cy="12.637" r="1.535"/>
 	</g>
 	<g>
 		<path style="fill:#3C3C3B;" d="M38.207,46.639c0-0.416,0-0.833,0-1.249c0.009-0.061,0.021-0.12,0.026-0.182

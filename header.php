@@ -27,6 +27,8 @@
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo( 'template_directory' ); ?>/css/reset.css">
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'template_directory' ); ?>/css/style.css" />
+	<script type='text/javascript' src="<?php bloginfo( 'template_directory' ); ?>/js/jquery-1.7.1.min.js"></script>
+	<script type='text/javascript' src="<?php bloginfo( 'template_directory' ); ?>/js/cm.js"></script>
 <?php
 	/* We add some JavaScript to pages with the comment form
 	 * to support sites with threaded comments (when in use).
@@ -39,70 +41,73 @@
 </head>
 
 <body class="<?php if(is_page()) {echo 'page-'.$post->post_name; } ?>">
-	<header>
-		<div class="sheet">
-			<a href="/" class="logo">
-				<div class="sign">
-					<div class="ball b1"></div>
-					<div class="ball b2"></div>
-					<div class="ball b3"></div>
-					<div class="ball m1"></div>
-					<div class="ball m2"></div>
-					<div class="ball m3"></div>
-					<div class="ball t1"></div>
-					<div class="ball t2"></div>
-					<div class="ball t3"></div>
-				</div>
-				<div class="text"><span>CARGO</span><span>media</span></div>
-			</a>
-			<nav id="access" role="navigation">
-				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-			</nav>
-		</div>
-	</header>
-	<?php if ( is_front_page() ) { ?>
-	<div class="headerImage">
-		<?php
-		// Check to see if the header image has been removed
-		$header_image = get_header_image();
-		if ( $header_image ) :
-			// Compatibility with versions of WordPress prior to 3.4.
-			if ( function_exists( 'get_custom_header' ) ) {
-				// We need to figure out what the minimum width should be for our featured image.
-				// This result would be the suggested width if the theme were to implement flexible widths.
-				$header_image_width = get_theme_support( 'custom-header', 'width' );
-			} else {
-				$header_image_width = HEADER_IMAGE_WIDTH;
-			}
-			?>
-			<div>
-				<?php
-				// The header image
-				// Check if this is a post or page, if it has a thumbnail, and if it's a big one
-				if ( is_singular() && has_post_thumbnail( $post->ID ) &&
-						( /* $src, $width, $height */ $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), array( $header_image_width, $header_image_width ) ) ) &&
-						$image[1] >= $header_image_width ) :
-					// Houston, we have a new header image!
-					echo get_the_post_thumbnail( $post->ID, 'post-thumbnail' );
-				else :
-					// Compatibility with versions of WordPress prior to 3.4.
-					if ( function_exists( 'get_custom_header' ) ) {
-						$header_image_width  = get_custom_header()->width;
-						$header_image_height = get_custom_header()->height;
-					} else {
-						$header_image_width  = HEADER_IMAGE_WIDTH;
-						$header_image_height = HEADER_IMAGE_HEIGHT;
-					}
-					?>
-					<div class="imgWrapper">
-						<div class="smoothDevide"></div>
-						<div class="smoothDevide right"></div>
-						<div class="smoothDevide top"></div>
-						<img src="<?php header_image(); ?>" width="<?php echo $header_image_width; ?>" height="<?php echo $header_image_height; ?>" alt="" />
+	<div class="frame">
+		<div class="frameMask left"></div>
+		<div class="frameMask right"></div>
+		<header>
+			<div class="sheet">
+				<a href="/" class="logo">
+					<div class="sign">
+						<div class="ball b1"></div>
+						<div class="ball b2"></div>
+						<div class="ball b3"></div>
+						<div class="ball m1"></div>
+						<div class="ball m2"></div>
+						<div class="ball m3"></div>
+						<div class="ball t1"></div>
+						<div class="ball t2"></div>
+						<div class="ball t3"></div>
 					</div>
-					<?php endif; // end check for featured image or standard header ?>
+					<div class="text"><span>CARGO</span><span>media</span></div>
+				</a>
+				<nav id="access" role="navigation">
+					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+				</nav>
 			</div>
-			<?php endif; // end check for removed header image ?>
-		</div>
-	<?php } ?>
-	<section id="main">
+		</header>
+		<?php if ( is_front_page() ) { ?>
+		<div class="headerImage">
+			<?php
+			// Check to see if the header image has been removed
+			$header_image = get_header_image();
+			if ( $header_image ) :
+				// Compatibility with versions of WordPress prior to 3.4.
+				if ( function_exists( 'get_custom_header' ) ) {
+					// We need to figure out what the minimum width should be for our featured image.
+					// This result would be the suggested width if the theme were to implement flexible widths.
+					$header_image_width = get_theme_support( 'custom-header', 'width' );
+				} else {
+					$header_image_width = HEADER_IMAGE_WIDTH;
+				}
+				?>
+				<div>
+					<?php
+					// The header image
+					// Check if this is a post or page, if it has a thumbnail, and if it's a big one
+					if ( is_singular() && has_post_thumbnail( $post->ID ) &&
+							( /* $src, $width, $height */ $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), array( $header_image_width, $header_image_width ) ) ) &&
+							$image[1] >= $header_image_width ) :
+						// Houston, we have a new header image!
+						echo get_the_post_thumbnail( $post->ID, 'post-thumbnail' );
+					else :
+						// Compatibility with versions of WordPress prior to 3.4.
+						if ( function_exists( 'get_custom_header' ) ) {
+							$header_image_width  = get_custom_header()->width;
+							$header_image_height = get_custom_header()->height;
+						} else {
+							$header_image_width  = HEADER_IMAGE_WIDTH;
+							$header_image_height = HEADER_IMAGE_HEIGHT;
+						}
+						?>
+						<div class="imgWrapper">
+							<div class="smoothDevide"></div>
+							<div class="smoothDevide right"></div>
+							<div class="smoothDevide top"></div>
+							<img src="<?php header_image(); ?>" width="<?php echo $header_image_width; ?>" height="<?php echo $header_image_height; ?>" alt="" />
+						</div>
+						<?php endif; // end check for featured image or standard header ?>
+				</div>
+				<?php endif; // end check for removed header image ?>
+			</div>
+		<?php } ?>
+		<section id="main">

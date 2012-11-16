@@ -82,14 +82,17 @@ function cargomedia_setup() {
 	// This theme styles the visual editor with editor-style.css to match the theme style.
 	add_editor_style();
 
+	// Remove br filter
+	remove_filter('the_content', 'wpautop');
+
 	// This theme uses Featured img (also known as post thumbnails) for per-post/per-page Custom Header images
 	add_theme_support( 'post-thumbnails' );
 
 	// Add support for custom headers.
 	$custom_header_support = array(
 		// The height and width of our custom header.
-		'width' => apply_filters( 'cargomedia_header_image_width', 1200 ),
-		'height' => apply_filters( 'cargomedia_header_image_height', 288 ),
+		'width' => apply_filters( 'cargomedia_header_image_width', 960 ),
+		'height' => apply_filters( 'cargomedia_header_image_height', 300 ),
 		// Support flexible heights.
 		'flex-height' => true,
 		// Random image rotation by default.
@@ -115,21 +118,6 @@ function cargomedia_setup() {
 			'url' => '%s/img/header/office1.jpg',
 			'thumbnail_url' => '%s/img/header/thumbnail/office1.jpg',
 			'description' => __( 'Office', 'cargomedia' )
-		),
-		'office2' => array(
-			'url' => '%s/img/header/office2.jpg',
-			'thumbnail_url' => '%s/img/header/thumbnail/office2.jpg',
-			'description' => __( 'Office', 'cargomedia' )
-		),
-		'office3' => array(
-		'url' => '%s/img/header/office3.jpg',
-		'thumbnail_url' => '%s/img/header/thumbnail/office2.jpg',
-		'description' => __( 'Office', 'cargomedia' )
-		),
-		'office4' => array(
-		'url' => '%s/img/header/office4.jpg',
-		'thumbnail_url' => '%s/img/header/thumbnail/office2.jpg',
-		'description' => __( 'Office', 'cargomedia' )
 		)
 	) );
 }
