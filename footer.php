@@ -23,14 +23,14 @@
 						<p>Cargo Media AG</p>
 						<p>Untere Rebgasse 22<p/>
 						<p>CH-4058 Basel </p>
-
+						<a href="mailto:hello@cargomedia.ch" class="mail"><span class="icon"></span><span class="label">hello@cargomedia.ch</span></a>
 					</address>
 				</div>
 				<ul class="socialConnect">
-					<!--			<a href="https://plus.google.com/u/0/116466315130662662657/posts" class="google" title="Google +"></a>-->
 					<li><a href="https://twitter.com/cargomedia" class="twitter" title="Twitter"><span class="icon"></span><span class="label">@cargomedia</span></a></li>
-					<li><a href="https://github.com/cargomedia/" class="github" title="Github"><span class="icon"></span><span class="label">github</span></a></li>
-					<li><a href="mailto:hello@cargomedia.ch" class="mail"><span class="icon"></span><span class="label">hello@cargomedia.ch</span></a></li>
+					<li><a href="https://plus.google.com/116466315130662662657" class="google" rel="publisher"><span class="icon"></span><span class="label">Google+</span></a></li>
+					<li><a href="https://www.facebook.com/cargomedia" class="facebook""><span class="icon"></span><span class="label">Facebook</span></a></li>
+					<li><a href="https://github.com/cargomedia/" class="github" title="Github"><span class="icon"></span><span class="label">Github</span></a></li>
 				</ul>
 				<div>
 					<a class="map" href="http://goo.gl/maps/Cj3LD">

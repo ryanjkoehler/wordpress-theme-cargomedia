@@ -22,6 +22,12 @@
 		echo " | $site_description";
 	?></title>
 	<link rel="shortcut icon" href="<?php bloginfo( 'template_directory' ); ?>/img/favicon.ico" type="image/x-icon" />
+
+	<link rel="apple-touch-icon-precomposed" href="<?php bloginfo( 'template_directory' ); ?>/img/icon/apple-touch-icon-precomposed.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php bloginfo( 'template_directory' ); ?>/img/icon/apple-touch-icon-72x72-precomposed.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php bloginfo( 'template_directory' ); ?>/img/icon/apple-touch-icon-114x114-precomposed.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php bloginfo( 'template_directory' ); ?>/img/icon/apple-touch-icon-144x144-precomposed.png" />
+
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Bad+Script' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
@@ -80,33 +86,31 @@
 					$header_image_width = HEADER_IMAGE_WIDTH;
 				}
 				?>
-				<div>
-					<?php
-					// The header image
-					// Check if this is a post or page, if it has a thumbnail, and if it's a big one
-					if ( is_singular() && has_post_thumbnail( $post->ID ) &&
-							( /* $src, $width, $height */ $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), array( $header_image_width, $header_image_width ) ) ) &&
-							$image[1] >= $header_image_width ) :
-						// Houston, we have a new header image!
-						echo get_the_post_thumbnail( $post->ID, 'post-thumbnail' );
-					else :
-						// Compatibility with versions of WordPress prior to 3.4.
-						if ( function_exists( 'get_custom_header' ) ) {
-							$header_image_width  = get_custom_header()->width;
-							$header_image_height = get_custom_header()->height;
-						} else {
-							$header_image_width  = HEADER_IMAGE_WIDTH;
-							$header_image_height = HEADER_IMAGE_HEIGHT;
-						}
-						?>
-						<div class="imgWrapper">
-							<div class="smoothDevide"></div>
-							<div class="smoothDevide right"></div>
-							<div class="smoothDevide top"></div>
-							<img src="<?php header_image(); ?>" width="<?php echo $header_image_width; ?>" height="<?php echo $header_image_height; ?>" alt="" />
-						</div>
-						<?php endif; // end check for featured image or standard header ?>
-				</div>
+				<?php
+				// The header image
+				// Check if this is a post or page, if it has a thumbnail, and if it's a big one
+				if ( is_singular() && has_post_thumbnail( $post->ID ) &&
+						( /* $src, $width, $height */ $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), array( $header_image_width, $header_image_width ) ) ) &&
+						$image[1] >= $header_image_width ) :
+					// Houston, we have a new header image!
+					echo get_the_post_thumbnail( $post->ID, 'post-thumbnail' );
+				else :
+					// Compatibility with versions of WordPress prior to 3.4.
+					if ( function_exists( 'get_custom_header' ) ) {
+						$header_image_width  = get_custom_header()->width;
+						$header_image_height = get_custom_header()->height;
+					} else {
+						$header_image_width  = HEADER_IMAGE_WIDTH;
+						$header_image_height = HEADER_IMAGE_HEIGHT;
+					}
+					?>
+					<div class="imgWrapper sheet">
+						<div class="smoothDevide"></div>
+						<div class="smoothDevide right"></div>
+						<div class="smoothDevide top"></div>
+						<img src="<?php header_image(); ?>" width="<?php echo $header_image_width; ?>" height="<?php echo $header_image_height; ?>" alt="" />
+					</div>
+					<?php endif; // end check for featured image or standard header ?>
 				<?php endif; // end check for removed header image ?>
 			</div>
 		<?php } ?>

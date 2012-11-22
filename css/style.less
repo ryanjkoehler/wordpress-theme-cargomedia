@@ -70,6 +70,7 @@
 	-webkit-transition: @args;
 }
 
+
 .filter (@args) {
 	filter: @args;
 	-webkit-filter: @args;
@@ -110,10 +111,6 @@ body {
 	font-size: 16px;
 	color: @basic;
 	line-height: 1.5;
-
-	@media (max-width: 400px) {
-		font-size: 14px;
-	}
 }
 
 
@@ -121,7 +118,7 @@ body {
 	margin: 0 auto;
 	position: relative;
 
-	@media (min-width: 1600px) {
+	@media (min-width: 1601px) {
 		max-width: 1060px;
 	}
 
@@ -225,7 +222,7 @@ h3 {
 	color: @basic;
 
 	@media (max-width: 400px) {
-		font-size: 20px;
+		font-size: 22px;
 	}
 }
 
@@ -236,7 +233,7 @@ h4 {
 	text-align: center;
 
 	@media (max-width: 400px) {
-		font-size: 16px;
+		font-size: 18px;
 	}
 }
 
@@ -281,8 +278,8 @@ input[type=text] {
 }
 
 #searchform {
-	float: right;
-	margin: 10px 0;
+	text-align: right;
+	margin-bottom: 10px;
 }
 
 img {
@@ -384,7 +381,7 @@ mark {
 	}
 
 	&.rainbow {
-
+		margin-bottom: 30px;
 		div {
 			padding: 0;
 			height: 4px;
@@ -411,7 +408,7 @@ mark {
 }
 
 .logo {
-	display: block;
+	display: inline-block;
 	color: @basic;
 	white-space: nowrap;
 
@@ -497,12 +494,14 @@ header {
 	padding: 5px 0 3px 0;
 	border-bottom: 1px solid fadeout(@basic, 90);
 
+
 	@media (max-width: 400px) {
 		padding-bottom: 0;
 	}
 
 	.sheet {
 		box-shadow: none;
+
 		@media (max-width: 400px) {
 			padding: 0;
 		}
@@ -535,19 +534,20 @@ header {
 		}
 
 		nav#access {
+			position: absolute;
+			right: 15px;
+			bottom: 0;
+
+			@media (max-width: 700px) {
+				position: static;
+				margin-top: 18px;
+			}
+
+			@media (max-width: 400px) {
+				.clearfix;
+				}
+
 			.menu {
-				position: absolute;
-				right: 15px;
-				top: 3px;
-
-				@media (max-width: 700px) {
-					position: static;
-					margin-top: 15px;
-				}
-
-				@media (max-width: 400px) {
-					.clearfix;
-				}
 
 				li {
 					display: inline-block;
@@ -565,10 +565,9 @@ header {
 						text-transform: uppercase;
 						font-size: 18px;
 						margin: 0 10px;
-						padding: 0 4px;
+						padding: 0 4px 6px 4px;
 						font-weight: 300;
 						color: @basic;
-						padding-bottom: 6px;
 						border-bottom-style: solid;
 
 						@media (max-width: 700px) {
@@ -578,7 +577,7 @@ header {
 							display: block;
 							margin: 0;
 							padding: 7px 0;
-							background-color: fadeout(@basic, 97);
+							background-color: fadeout(@basic, 95);
 							width: 100%;
 							border: 1px solid fadeout(@basic, 85);
 							border-width: 1px 1px 0 0;
@@ -623,7 +622,7 @@ header {
 						@media (max-width: 400px) {
 							border-bottom-width: 0;
 //							font-weight: 600;
-							background-color: fadeout(@basic, 92);
+							background-color: fadeout(@basic, 90);
 						}
 					}
 				}
@@ -642,9 +641,7 @@ header {
 	}
 
 	.imgWrapper {
-		position: relative;
-		max-width: 960px;
-		margin: 0 auto;
+		padding: 0;
 
 		.smoothDevide {
 			position: absolute;
@@ -695,10 +692,9 @@ article {
 	}
 
 	&.home {
-		margin-top: 35px;
 
-		@media (max-width: 600px) {
-			margin-top: 0;
+		@media (max-width: 650px) {
+			padding-top: 35px;
 		}
 
 		h3 {
@@ -713,6 +709,30 @@ article {
 
 			@media (max-width: 400px) {
 				font-size: 20px;
+			}
+		}
+	}
+
+	&.news {
+		ul {
+			text-align: center;
+			li {
+				display: inline-block;
+				margin: 2px;
+
+				a {
+					display: inline-block;
+					padding: 6px 10px;
+					background-color: fadeout(@basic, 98);
+					border: 1px solid fadeout(@basic, 90);
+					text-align: center;
+					color: @basic;
+
+					&:hover {
+						text-decoration: none;
+						background-color: fadeout(@basic, 90);
+					}
+				}
 			}
 		}
 	}
@@ -1037,9 +1057,25 @@ article {
 		}
 
 		&.basel {
+
+			.baselFlag {
+				display:block;
+				width: 50px;
+				height: 60px;
+				position: absolute;
+				right: 10px;
+				bottom: 0;
+				background-image: url("../img/cm_baselFlag.svg");
+				background-size: contain;
+
+				@media (max-width: 500px) {
+					display: none;
+				}
+			}
 			.illustration {
 				background-image: url("../img/cm_basel.svg");
 				height: 178px;
+				-webkit-box-reflect: none;
 			}
 		}
 
@@ -1056,7 +1092,7 @@ article {
 		&.career {
 			.anchor {
 				position: relative;
-				top: -50px;
+				top: -90px;
 			}
 
 			.apply {
@@ -1118,15 +1154,16 @@ article {
 				}
 			}
 			&.single {
-				margin-top: 20px;
+				margin-top: 40px;
 			}
 		}
 
 		img {
 			.box-sizing(border-box);
-			padding: 5px;
+			padding: 2px;
 			border: 1px solid fadeout(@basic, 90);
 			background-color: rgb(254, 254, 254);
+			height: auto;
 		}
 
 		.entry-meta {
@@ -1146,7 +1183,7 @@ article {
 		}
 
 		.post-entry {
-			margin-left: 160px;
+			margin-left: 165px;
 
 			@media (max-width: 600px) {
 				margin: 0;
@@ -1158,15 +1195,15 @@ article {
 
 			h2 {
 				text-align: left;
-				font-size: 20px;
-				margin-top: 35px;
-				font-weight: 700;
+				font-size: 22px;
+				margin: 50px 0 12px;
+				font-weight: 600;
 			}
 
 			h3 {
 				font-family: 'Open Sans', sans-serif;
-				margin: 25px 0 0 0;
-				font-size: 18px;
+				margin: 40px 0 5px 0;
+				font-size: 17px;
 				font-weight: 600;
 				text-align: left;
 				padding: 0;
@@ -1176,27 +1213,54 @@ article {
 				text-align: left;
 				font-size: 15px;
 				text-transform: uppercase;
-				margin: 10px 0 0 0;
-				font-weight: 600;
+				margin: 20px 0 0 0;
+				font-weight: 400;
 			}
 
-			code {
+			code, .code {
 				display: block;
 				margin: 10px 0;
 				padding: 5px 10px;
 				background-color: fadeout(@blue, 90);
 				border: 1px dashed fadeout(@blue, 70);
 				font-family: monospace;
-				font-size: 13px;
+				font-size: 14px;
+				font-weight: 300;
+
+				p {
+					margin: 0;
+				}
+			}
+
+			iframe {
+				margin: 10px 0;
 			}
 
 			img {
 				margin: 10px 0;
+				display: block;
+
+				&.noBg {
+					border: 0;
+					background-color: transparent;
+				}
+				&.aligncenter {
+					margin: 10px auto;
+				}
+				&.alignleft {
+					margin: 10px 10px 10px 0;
+					float: left;
+				}
+				&.alignright {
+					margin: 10px 0 10px 10px;
+					float: right;
+				}
+
 			}
 
 			ul, ol {
 				list-style: disc;
-				margin: 10px 0;
+				margin: 0 0 20px 0;
 				padding-left: 25px;
 			}
 			ol {
@@ -1247,7 +1311,7 @@ article {
 
 			a {
 				display: inline-block;
-				padding: 5px 10px;
+				padding: 6px 10px;
 				background-color: fadeout(@basic, 98);
 				border: 1px solid fadeout(@basic, 90);
 				text-align: center;
@@ -1379,6 +1443,10 @@ footer {
 		margin: 0;
 	}
 
+	a {
+		color: @basic;
+	}
+
 	.columns {
 		margin: 0;
 
@@ -1401,14 +1469,12 @@ footer {
 			margin-bottom: 10px;
 
 			a {
-				color: @basic;
-
 				.icon {
 					display: inline-block;
 					margin: 0 5px;
-					width: 30px;
-					height: 30px;
-					border-radius: 15px;
+					width: 24px;
+					height: 24px;
+					border-radius: 12px;
 					background-size: 75%;
 					background-position: center;
 					background-repeat: no-repeat;
@@ -1468,6 +1534,72 @@ footer {
 			font-size: 12px;
 		}
 	}
+}
 
+// rolling links: http://jsdo.it/hakim/rolling-links
+.roll {
+	display: inline-block;
+	overflow: hidden;
+
+	vertical-align: top;
+
+	-webkit-perspective: 600px;
+	-moz-perspective: 600px;
+	-ms-perspective: 600px;
+
+	-webkit-perspective-origin: 50% 50%;
+	-moz-perspective-origin: 50% 50%;
+	-ms-perspective-origin: 50% 50%;
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	span {
+		display: block;
+		position: relative;
+		padding: 0 2px;
+
+		-webkit-transition: all 400ms ease;
+		-moz-transition: all 400ms ease;
+		-ms-transition: all 400ms ease;
+
+		-webkit-transform-origin: 50% 0%;
+		-moz-transform-origin: 50% 0%;
+		-ms-transform-origin: 50% 0%;
+
+		-webkit-transform-style: preserve-3d;
+		-moz-transform-style: preserve-3d;
+		-ms-transform-style: preserve-3d;
+
+		&:after {
+			content: attr(data-title);
+
+			display: block;
+			position: absolute;
+			left: 0;
+			top: 0;
+			padding: 0 2px;
+
+			color: #fff;
+			background: @blue;
+
+			-webkit-transform-origin: 50% 0%;
+			-moz-transform-origin: 50% 0%;
+			-ms-transform-origin: 50% 0%;
+
+			-webkit-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+			-moz-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+			-ms-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+		}
+	}
+
+	&:hover span{
+		background: @blue;
+
+		-webkit-transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
+		-moz-transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
+		-ms-transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
+	}
 }
 
