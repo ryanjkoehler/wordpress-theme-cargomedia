@@ -41,7 +41,7 @@
 		</div>
 		<div class="footerBar">
 			<div class="sheet">
-				<p class="copyright">© 2012 Cargo Media AG</p>
+				<p class="copyright">© <?php echo date('Y'); ?> Cargo Media AG</p>
 			</div>
 		</div>
 	</footer>
