@@ -15,7 +15,6 @@ $(document).ready (function(){
 		$('.frameMask.right').css({right: -maskWidth});
 	}).resize();
 
-
 	// Average Age
 	var birthdays = [
 		'1985/12/16',
@@ -42,7 +41,7 @@ $(document).ready (function(){
 		$('.averageAge').text(calculateAverageAge());
 	}, 1000);
 
-	var currentJobCount = 2;
+	var currentJobCount = 3;
 	var menuItem = $("#menu-main a:contains('Jobs')");
 	if (currentJobCount > 0) {
 		$("<span id='jobCount' />").text(currentJobCount).appendTo(menuItem);
@@ -69,12 +68,9 @@ $(document).ready (function(){
 		}
 	}
 
-
 	linkify( '.entry-content a' );
 
-
 	// Smooth Scroll: http://css-tricks.com/snippets/jquery/smooth-scrolling/
-
 	function filterPath(string) {
 		return string
 			.replace(/^\//,'')
@@ -120,5 +116,4 @@ $(document).ready (function(){
 		}
 		return [];
 	}
-
 });
