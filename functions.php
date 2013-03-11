@@ -82,7 +82,18 @@ function cargomedia_setup() {
 	// This theme styles the visual editor with editor-style.css to match the theme style.
 	add_editor_style();
 
-	// no <br /> tags
+	// Remove br filter
+//	remove_filter('the_content', 'wpautop');
+
+	function qanda($content) {
+
+		$pattern = "/<p[^>]*><\\/p[^>]*>/";
+		$content =  preg_replace($pattern, '', $content);
+		return $content;
+	}
+
+	add_filter('the_content', 'qanda');
+
 	wpautop( 'the_content', 0 );
 
 	// This theme uses Featured img (also known as post thumbnails) for per-post/per-page Custom Header images

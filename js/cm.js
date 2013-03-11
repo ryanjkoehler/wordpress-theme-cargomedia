@@ -15,6 +15,7 @@ $(document).ready (function(){
 		$('.frameMask.right').css({right: -maskWidth});
 	}).resize();
 
+
 	// Average Age
 	var birthdays = [
 		'1985/12/16',
@@ -68,9 +69,12 @@ $(document).ready (function(){
 		}
 	}
 
+
 	linkify( '.entry-content a' );
 
+
 	// Smooth Scroll: http://css-tricks.com/snippets/jquery/smooth-scrolling/
+
 	function filterPath(string) {
 		return string
 			.replace(/^\//,'')
@@ -116,4 +120,5 @@ $(document).ready (function(){
 		}
 		return [];
 	}
+
 });
