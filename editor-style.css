@@ -55,6 +55,11 @@ ul, ol {
 	margin: 10px 0;
 	padding-left: 25px;
 }
+
 ol {
 	list-style: decimal;
+}
+
+em {
+	font-style: italic;
 }
