@@ -42,7 +42,7 @@ $(document).ready (function(){
 		$('.averageAge').text(calculateAverageAge());
 	}, 1000);
 
-	var currentJobCount = 4;
+	var currentJobCount = 2;
 	var menuItem = $("#menu-main a:contains('Jobs')");
 	if (currentJobCount > 0) {
 		$("<span id='jobCount' />").text(currentJobCount).appendTo(menuItem);
