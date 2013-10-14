@@ -22,7 +22,7 @@
 					<address>
 						<p>Cargo Media AG</p>
 						<p>Untere Rebgasse 22<p/>
-						<p>CH-4058 Basel </p>
+						<p>4058 Basel (Switzerland)</p>
 						<a href="mailto:hello@cargomedia.ch" class="mail"><span class="icon"></span><span class="label">hello@cargomedia.ch</span></a>
 					</address>
 				</div>
